@@ -45,11 +45,16 @@
                 //
                 //
             Console.WriteLine("задание 4");
+            int count = 0;
             for (int i = -300; i <= 200; i += 10)
-            {
-                Console.Write(i + " ");
-            }
-            Console.ReadLine();
+            if (i % 10 == 0)
+           {
+                 Console.Write(i + " ");
+                 count++;
+           }
+             Console.WriteLine();
+             Console.WriteLine(count + " - количество чисел");
+             Console.ReadLine();
             //
             //
             Console.WriteLine("задание 5");
