@@ -9,7 +9,7 @@ namespace PZ_14
             int count = 0;
             bool inNumber = false;
 
-            // Открываем файл для чтения
+            //  файл для чтения
             using (FileStream fs = new FileStream(fileName, FileMode.Open))
             {
                 using (StreamReader reader = new StreamReader(fs))
@@ -20,7 +20,7 @@ namespace PZ_14
 
                         if (charCode >= '0' && charCode <= '9')
                         {
-                            // Если символ - цифра и мы не находимся внутри числа, начинаем новое число
+                            // если символ - цифра, начинаем новое число
                             if (!inNumber)
                             {
                                 inNumber = true;
@@ -29,7 +29,7 @@ namespace PZ_14
                         }
                         else
                         {
-                            // Если символ не цифра, завершаем текущее число
+                            // если символ не цифра, завершаем текущее число
                             inNumber = false;
                         }
                     }
@@ -41,17 +41,17 @@ namespace PZ_14
 
         static void CreateFile(string fileName)
         {
-            // Создаем или перезаписываем файл
+            
             using (StreamWriter writer = new StreamWriter(fileName))
             {
                 Console.WriteLine("Введите данные. Введите пустую строку для завершения ввода.");
 
-                // Цикл ввода данных и записи их в файл
+               
                 while (true)
                 {
                     string input = Console.ReadLine();
 
-                    // Если введена пустая строка, завершаем цикл
+                    // если введена пустая строка, завершаем цикл
                     if (string.IsNullOrWhiteSpace(input))
                         break;
 
@@ -65,18 +65,15 @@ namespace PZ_14
         {
             string fileName = "inFile.txt";
 
-            // Создаем файл и записываем данные в него
+            
             CreateFile(fileName);
 
             // Анализируем текст на наличие чисел (не цифр)
             int numberOfNumbers = CountNumbers(fileName);
 
-            // Выводим количество чисел на консоль
+            
             Console.WriteLine($"\nКоличество чисел в тексте: {numberOfNumbers}");
         }
     }
 }
-
-
-
 
