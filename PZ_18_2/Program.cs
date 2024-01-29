@@ -3,7 +3,7 @@
     internal class Program
     {
         //ФИО студента: Кабанов Илья, Арзамасцев Даниил
-      //номер варианта: 5 вариант.
+      //номер варианта: 5 вариант
         static void Main(string[] args)
         {
             Client cl1 = new Client("kfjks ksmkvj ksjk", 5000000, CreditStatus.Middle);
